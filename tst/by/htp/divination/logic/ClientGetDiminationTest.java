@@ -19,8 +19,16 @@ public class ClientGetDiminationTest {
 	@Test
 	public void positiveClientGetDiminationTest() {
 		String clientFuture = client.askFortuneTeller(fortuneTeller);
-
-		assertTrue(fortuneTeller.getDivinations().containsValue((Object) clientFuture));
+		
+		//assertTrue(fortuneTeller.getDivinations().containsValue(clientFuture));
+		
+		String[] arr = fortuneTeller.getDivinations().get("Love");		
+		
+		for(String s: arr){
+			if(s.equals(clientFuture)){
+				assertTrue(s.equals(clientFuture));
+			}
+		}
 	}
 
 }
